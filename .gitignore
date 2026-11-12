@@ -1,0 +1,94 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Environment variables
+.env
+.env.local
+
+# Backup files
+*.backup
+*.bak
+*.swp
+*.tmp
+
+# Video files (for testing)
+*.mp4
+*.mov
+*.avi
+*.webm
+
+# Model files (large)
+*.pth
+*.onnx
+*.h5
+
+# ...but keep the small bundled face detector the app needs
+!backend/models/face_yunet.onnx
+
+# Evaluation datasets (downloaded public data; not redistributed here)
+eval/data/
+
+# Manuscript kept local until submission (avoid a public preprint of the paper)
+paper/
+TruSight_Paper.pdf
+TruSight_Paper.docx
+
+# Local virtualenv
+.venv/
+backend/.venv/
+backend/temp/
+
+# OS files
+Thumbs.db
+.DS_Store
+TruSight_Paper_Anonymous.pdf
+TruSight_Paper_Anonymous.docx
+TruSight_TitlePage.pdf
+TruSight_TitlePage.docx

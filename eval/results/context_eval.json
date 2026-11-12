@@ -1,0 +1,32 @@
+{
+  "task": "context",
+  "n_images": 2000,
+  "n_pairs": 6000,
+  "dataset": "COCO val 2014 captions (sayakpaul/coco-30-val-2014)",
+  "signal": "claim_alignment (CLIP scene-vs-claim), OOC score = 1 - alignment",
+  "random_negatives": {
+    "auc": 0.9950518749999999,
+    "operating_point": {
+      "threshold": 0.023501992225646973,
+      "accuracy": 0.9715,
+      "precision": 0.974155069582505,
+      "recall": 0.9693372898120672,
+      "f1": 0.9717402082300446
+    },
+    "mean_score_in_context": 0.004815685097128153,
+    "mean_score_out_of_context": 0.8916586637496948
+  },
+  "hard_negatives": {
+    "auc": 0.786096875,
+    "operating_point": {
+      "threshold": 0.0002872347831726074,
+      "accuracy": 0.7065,
+      "precision": 0.7471698113207547,
+      "recall": 0.6061224489795919,
+      "f1": 0.6692957746478874
+    },
+    "mean_score_in_context": 0.004815685097128153,
+    "mean_score_out_of_context": 0.10854761302471161
+  },
+  "latency_ms_per_pair": 71.04510684808095
+}

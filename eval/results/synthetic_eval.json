@@ -1,0 +1,30 @@
+{
+  "task": "synthetic",
+  "n": 1500,
+  "n_fake": 750,
+  "n_real": 750,
+  "auc_by_signal": {
+    "model": 0.699808,
+    "frequency": 0.35526755555555556,
+    "ela": 0.3976791111111111,
+    "fused": 0.6952142222222222
+  },
+  "operating_point": {
+    "threshold": 0.5,
+    "accuracy": 0.628,
+    "precision": 0.7790697674418605,
+    "recall": 0.35733333333333334,
+    "f1": 0.489945155393053
+  },
+  "ablation_choice": "model",
+  "test_auc_chosen": 0.6953317827141525,
+  "ece_raw": 0.16829024043966556,
+  "ece_calibrated": 0.0420558644781738,
+  "latency_ms_per_image": 1883.4915803273518,
+  "robustness": {
+    "clean": 0.6863839285714286,
+    "jpeg": 0.6939174107142857,
+    "resize": 0.6690848214285714,
+    "blur": 0.6194196428571428
+  }
+}

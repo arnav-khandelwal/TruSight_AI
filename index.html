@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TruSight AI - Video Forensics & Integrity Verification</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+              serif: ['Playfair Display', 'serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            colors: {
+              'ink': '#2C221A',          // Deep espresso roast brown
+              'paper': '#F7F3EB',        // Minimalist warm beige linen
+              'paper-dark': '#E9E2D4',   // Muted wheat/sand beige
+              'highlight': '#8A5836',    // Warm chestnut cognac brown
+              'alert': '#C98A4B',        // Warm caramel amber-tan accent
+              'warning': '#D97706',      // Warm honey amber
+              'success': '#4B6B4E',      // Natural earthy sage green
+            },
+            boxShadow: {
+              'hard': '4px 4px 0px 0px #2C221A',
+              'hard-sm': '2px 2px 0px 0px #2C221A',
+              'hard-lg': '8px 8px 0px 0px #2C221A',
+            },
+            animation: {
+              'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        background-color: #F7F3EB;
+        color: #2C221A;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #E9E2D4;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #2C221A;
+        border: 2px solid #E9E2D4;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #4B3B2F;
+      }
+      
+      .noise-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 50;
+        opacity: 0.025;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      }
+
+      /* ---------- Mobile refinements ----------
+         All rules are max-width only, so the desktop layout is never affected. */
+      @media (max-width: 767px) {
+        html, body { overflow-x: hidden; }
+        /* Responsive shadows */
+        .shadow-hard    { box-shadow: 3px 3px 0 0 #2C221A !important; }
+        .shadow-hard-lg { box-shadow: 5px 5px 0 0 #2C221A !important; }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <div class="noise-bg"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "task": "deepfake",
+  "n_total": 898,
+  "n_face_detected": 893,
+  "face_detection_rate": 0.9944320712694877,
+  "n_fake": 444,
+  "n_real": 449,
+  "auc_by_signal": {
+    "model": 0.6852113806456792,
+    "frequency": 0.627340034912418,
+    "fused": 0.6930817231485383
+  },
+  "operating_point": {
+    "threshold": 0.5,
+    "accuracy": 0.5666293393057111,
+    "precision": 0.5362134688691232,
+    "recall": 0.9504504504504504,
+    "f1": 0.685621445978879
+  },
+  "ablation_choice": "model",
+  "test_auc_chosen": 0.6897395770635207,
+  "ece_raw": 0.4223420446805273,
+  "ece_calibrated": 0.05299238099989532,
+  "latency_ms_per_image": 556.8912894794829
+}

@@ -1,0 +1,22 @@
+{
+  "task": "deepfake_x",
+  "dataset": "JamieWithofs/Deepfake-and-real-images (256x256)",
+  "n_total": 600,
+  "n_face_detected": 598,
+  "face_detection_rate": 0.9966666666666667,
+  "n_fake": 299,
+  "n_real": 299,
+  "auc_by_signal": {
+    "model": 0.9707889173499178,
+    "frequency": 0.6601380297759534,
+    "fused": 0.9158734242346283
+  },
+  "operating_point": {
+    "threshold": 0.5,
+    "accuracy": 0.657190635451505,
+    "precision": 0.5932539682539683,
+    "recall": 1.0,
+    "f1": 0.7447073474470735
+  },
+  "latency_ms_per_image": 256.5434368451436
+}

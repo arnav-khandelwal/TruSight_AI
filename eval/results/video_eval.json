@@ -1,0 +1,33 @@
+{
+  "task": "video_context",
+  "n_clips": 1000,
+  "n_pairs": 3000,
+  "frames_per_clip": 6,
+  "dataset": "MSR-VTT 1k-A test split (friedrichor/MSR-VTT), in-the-wild YouTube clips",
+  "signal": "claim_alignment from analyze_contextual_consistency (deployed multi-frame path)",
+  "random_negatives": {
+    "auc": 0.9498525000000001,
+    "operating_point": {
+      "threshold": 0.4896870255470276,
+      "accuracy": 0.884,
+      "precision": 0.9083333333333333,
+      "recall": 0.8582677165354331,
+      "f1": 0.8825910931174089
+    },
+    "mean_score_in_context": 0.1568552553653717,
+    "mean_score_out_of_context": 0.7974693775177002
+  },
+  "hard_negatives": {
+    "auc": 0.659608,
+    "operating_point": {
+      "threshold": 0.19498692452907562,
+      "accuracy": 0.612,
+      "precision": 0.6572164948453608,
+      "recall": 0.5,
+      "f1": 0.5679287305122495
+    },
+    "mean_score_in_context": 0.1568552553653717,
+    "mean_score_out_of_context": 0.3281059265136719
+  },
+  "latency_ms_per_clip_scoring": 941.4906168778738
+}

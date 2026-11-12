@@ -39,6 +39,11 @@ def image_embeddings(imgs: List[Image.Image]) -> np.ndarray:
     with torch.no_grad():
         inp = proc(images=imgs, return_tensors="pt").to(_DEVICE)
         feat = model.get_image_features(**inp)
+        # In transformers >= 4.40 / 5.x, get_image_features returns BaseModelOutputWithPooling
+        if hasattr(feat, "pooler_output") and feat.pooler_output is not None:
+            feat = feat.pooler_output
+        elif isinstance(feat, (list, tuple)):
+            feat = feat[0]
         feat = feat / feat.norm(dim=-1, keepdim=True).clamp_min(1e-8)
     return feat.cpu().numpy().astype(np.float32)
 

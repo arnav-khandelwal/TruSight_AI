@@ -10,8 +10,20 @@ def analyze_context_integrity(frame_paths: List[str], claim: str) -> Dict[str, A
     temporal_score = temporal_result.get("confidence", 0) * 100 if temporal_result.get("detected") else 0
     contextual_score = contextual_result.get("confidence", 0) * 100 if contextual_result.get("inconsistent") else 0
     environmental_score = environmental_result.get("confidence", 0) * 100 if environmental_result.get("inconsistent") else 0
-    risk_score = (temporal_score * 0.5 + contextual_score * 0.3 + environmental_score * 0.2)
-    risk_score = min(max(risk_score, 0), 100)
+
+    # Dynamic weight re-normalization:
+    # If no reference database is configured and no loop is detected, the temporal signal
+    # cannot verify reuse. Re-normalize weights over active signals (0.6 contextual, 0.4 environmental)
+    # so unpopulated databases do not artificially anchor severe mismatches below HIGH risk.
+    has_ref_db = temporal_result.get("reference_configured", False)
+    has_temporal_signal = has_ref_db or temporal_result.get("detected", False)
+
+    if has_temporal_signal:
+        risk_score = (temporal_score * 0.5 + contextual_score * 0.3 + environmental_score * 0.2)
+    else:
+        risk_score = (contextual_score * 0.6 + environmental_score * 0.4)
+
+    risk_score = min(max(round(risk_score, 1), 0), 100)
     if risk_score < 30:
         risk_level = "LOW"
     elif risk_score < 70:
